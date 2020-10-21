@@ -35,7 +35,7 @@ Category.create(name: "Birthdays")
 Category.create(name: "Misceallanous")
 
 
-Task.create(subject: "School", content: "school sucks", date: 01222020, group: "Dont worry about it", user_id: User.first.id, category_id: Category.all.sample.id)
-Task.create(subject: "Work meeting", content: "Algorithms", date: 01242020, group: "important", user_id: User.first.id, category_id: Category.all.sample.id)
-Task.create(subject: "Cohort Meeting", content: "Code Hort", date: 06242020, group: "Important", user_id: User.first.id, category_id: Category.all.sample.id)
-Task.create(subject: "doctor appt", content: "covid vaccine", date: 05152020, group: "Important", user_id: User.first.id, category_id: Category.all.sample.id)
+Task.create(subject: "School", content: "school sucks", user_id: User.first.id, category_id: Category.all.sample.id)
+Task.create(subject: "Work meeting", content: "Algorithms", user_id: User.first.id, category_id: Category.all.sample.id)
+Task.create(subject: "Cohort Meeting", content: "Code Hort", user_id: User.first.id, category_id: Category.all.sample.id)
+Task.create(subject: "doctor appt", content: "covid vaccine", user_id: User.first.id, category_id: Category.all.sample.id)

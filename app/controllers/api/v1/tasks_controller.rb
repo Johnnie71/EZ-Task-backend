@@ -5,24 +5,23 @@ class Api::V1::TasksController < ApplicationController
     def index
         tasks = Task.all 
 
-        render json: tasks, except: [:created_at, :updated_at]
+        render json: tasks, except: [:created_at, :updated_at, :user_id, :category_id]     
+    
 
     end
 
-    # def show
-    #     @task = Task.find_by(task_params)
-    # end
-    
-    # def new
-
-    # end
 
     def create
         task = Task.create(task_params)
 
         render json: task 
-
     end
+
+    def update
+        task = Task.find(params[:id])
+        
+        task.update!(task_params)
+    end 
 
     def destroy
 
@@ -36,20 +35,8 @@ class Api::V1::TasksController < ApplicationController
 
     private
     def task_params
-        params.require(:task).permit(:subject, :content)
+        params.require(:task).permit(:subject, :content, :user_id, :category_id)
     end 
     
-    # def update
 
-    # end 
-
-    # private
-
-    # def task_params
-    #     params.require(:task).permit(:subject, :content, :date, :group, :user_id, :category_id)
-    # end
-
-    # def find_task
-    #     @task = Task.find(params[:id])
-    # end
 end
