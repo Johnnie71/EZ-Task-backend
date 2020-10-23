@@ -3,7 +3,7 @@ class Api::V1::TasksController < ApplicationController
     # before_action :find_task, only: [:show, :edit, :update, :destroy]
 
     def index
-        tasks = Task.all 
+        tasks = Task.all.sort_by {|task| task.subject}
 
         render json: tasks, except: [:created_at, :updated_at, :user_id, :category_id]     
     
