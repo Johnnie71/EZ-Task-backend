@@ -7,7 +7,6 @@ class Api::V1::TasksController < ApplicationController
 
         render json: tasks, except: [:created_at, :updated_at, :user_id, :category_id]     
     
-
     end
 
 
@@ -26,13 +25,11 @@ class Api::V1::TasksController < ApplicationController
     end 
 
     def destroy
-
         task = Task.find(params[:id])
-
+        
         task.destroy
 
         render json: {}
-
     end
 
     private
